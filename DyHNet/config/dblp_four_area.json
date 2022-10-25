@@ -1,0 +1,42 @@
+{
+    // data
+    "name": "dblp_four_area",
+    "num_time_steps": 7,
+    "max_size": 5,
+    "seed": 0,
+    "multilabel": false,
+    "num_workers": 0,
+    "sample_walk_len": 10, // # sampling anchor nodes
+    "random_walk_len": 5, // # sampling neighbors of anchor nodes
+    "structure_patch_type": "triangular_random_walk",
+    "max_sim_epochs": 5,
+    "n_anchor_patches_structure": 45,
+    "n_triangular_walks": 15,
+    "n_processes": 4,
+    "batch_size": 64,
+    "meta_paths": "0-1-0 1-0-1 1-2-1 2-1-2 1-3-1 3-1-3 0-1-2-1-0 0-1-3-1-0 2-1-3-1-2 3-1-2-1-3",
+    // model
+    "use_mpn_projection": true,
+    "lstm_aggregator": "sum",
+    "lstm_n_layers": 2,  
+    "subg_n_layers": 2,
+    "node_embed_size": 128,
+    "subg_hidden_dim": 128,
+    "hidden_dim": 128,
+    "emb_dim": 128,
+    "dropout_prob": 0.1,
+    "n_heads": 4,
+    "learning_rate": 0.0001,
+    "num_labels": 4, 
+    "loss": "BCE", //BCE, KL, MULTI
+    "batch_norm": true,
+    "alpha": 0.9,
+    "beta": 0.1,
+    // trainer
+    "checkpoint_dir": "../model/",
+    "top_k": 30,
+    "max_epochs": 200,
+    "metric": "val_micro_f1",
+    "patience": 50,
+    "mode": "max"
+}
