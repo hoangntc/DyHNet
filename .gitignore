@@ -1,6 +1,8 @@
 misc/*
 log/*
 dataset/*
+dataset/dblp_four_area/t_*/*
+!dataset/dblp_four_area
 !dataset/.gitkeep
 dataset_raw/*
 model_*/*
